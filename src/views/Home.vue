@@ -4,13 +4,18 @@
         <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
 
         {{ hey }}
-        <button @click="getHey()"></button>
+        {{ heyStore }}
+        <button @click="getHey()">getHey</button>
+        <input type="text" v-model="form" />
+        <button @click="onSubmit">update</button>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref, reactive } from 'vue';
+import { useStore } from '@/store/index';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import MutationTypes from '@/store/mutationTypes';
 
 export default defineComponent({
     name: 'Home',
@@ -18,15 +23,34 @@ export default defineComponent({
         HelloWorld,
     },
     setup() {
+        const form = ref('');
+
+        const clearForm = () => {
+            form.value = '';
+        };
+
         const hey = ref('HEYYYYYYYYY');
 
         function getHey() {
             console.log('hEYYYYYYY?????');
         }
 
+        // store
+        const store = useStore();
+        const heyStore = computed(() => store.state.heyStore);
+        console.log(heyStore);
+
+        const onSubmit = () => {
+            store.commit(MutationTypes.setHeyStore, form.value);
+            clearForm();
+        };
+
         return {
+            form,
             hey,
             getHey,
+            heyStore,
+            onSubmit,
         };
     },
 });
