@@ -3142,6 +3142,13 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classzu@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/classzu/-/classzu-0.0.1.tgz#fa71f1e0d9b2348d710bda7452fa7106b724f71c"
+  integrity sha512-kUBzLGw1B89p3ALjfJMD2nQwyG+KeKAZrlc5TXjLD2x07RaqMhCOtW676IZ4F2DWKvmiojCAZsMK3P/C96FYwA==
+  dependencies:
+    konva "^8.3.0"
+
 clean-css@4.2.x:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.4.tgz#733bf46eba4e607c6891ea57c24a989356831178"
@@ -6936,6 +6943,11 @@ kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
+
+konva@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/konva/-/konva-8.3.0.tgz#538452fedc0d0e135415f5f53787f779e8530027"
+  integrity sha512-V83lFjf1xPJp7SzWKktOgRFPYa8SOHKVfgru3jjdMjKTGNpCGrIh3CuJeKC/tJ5Fg0P3lOpPCR30gDbDsATmDA==
 
 launch-editor-middleware@^2.2.1:
   version "2.2.1"

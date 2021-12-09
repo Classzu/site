@@ -8,14 +8,18 @@
         <button @click="getHey()">getHey</button>
         <input type="text" v-model="form" />
         <button @click="onSubmit">update</button>
+
+        <div id="myDiv" style="height: 500px; border: 1px solid"></div>
     </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref, reactive } from 'vue';
+import { computed, defineComponent, ref, reactive, onMounted } from 'vue';
 import { useStore } from '@/store/index';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue';
 import MutationTypes from '@/store/mutationTypes';
+
+import Classzu from 'classzu';
 
 export default defineComponent({
     name: 'Home',
@@ -23,6 +27,11 @@ export default defineComponent({
         HelloWorld,
     },
     setup() {
+        onMounted(() => {
+            const classzu = new Classzu();
+            classzu.setup('myDiv');
+        });
+
         const form = ref('');
 
         const clearForm = () => {
